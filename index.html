@@ -16,8 +16,9 @@
   <style>
     body {
       font-family: "Plus Jakarta Sans", sans-serif;
-      background-color: #fff7ed;
-      color: #431407;
+      background-color: #FAFAF9;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
     }
 
     ::-webkit-scrollbar {
@@ -29,12 +30,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #f97316;
+      background: #006400;
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #ea580c;
+      background: #004d00;
     }
 
     .status-tag {
@@ -47,9 +48,9 @@
     }
 
     .status-in_stock {
-      background-color: #dcfce7;
-      color: #15803d;
-      border: 1px solid #86efac;
+      background-color: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
     }
 
     .status-out_of_stock {
@@ -99,14 +100,18 @@
     }
 
     .product-card {
-      transition: all 0.3s ease;
-      border: 1px solid #fed7aa;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid #f3f4f6;
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     }
 
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.2);
-      border-color: #f97316;
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: #fce7f3;
     }
 
     .product-image-container {
@@ -114,8 +119,8 @@
       padding-top: 100%;
       position: relative;
       overflow: hidden;
-      border-radius: 0.75rem;
-      background-color: #fff7ed;
+      background-color: #fafafa;
+      border-bottom: 1px solid #f3f4f6;
     }
 
     .product-image {
@@ -142,8 +147,8 @@
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: #f97316;
-      ring: 2px solid #f97316;
+      border-color: #006400;
+      ring: 2px solid #006400;
     }
 
     /* ==================== CART & CHECKOUT STYLES ==================== */
@@ -151,29 +156,29 @@
     /* Floating Cart Button */
     .floating-cart-btn {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 32px;
+      right: 32px;
       z-index: 999;
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #f38b4f, hsl(22, 100%, 50%));
-      box-shadow: 0 8px 24px rgba(4, 120, 87, 0.3);
+      background: linear-gradient(135deg, #006400, #004d00);
+      box-shadow: 0 10px 30px rgba(0, 100, 0, 0.4);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-      border: 3px solid #fff;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 4px solid #fff;
     }
 
     .floating-cart-btn:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 12px 32px rgba(120, 83, 4, 0.4);
+      transform: translateY(-6px) scale(1.08);
+      box-shadow: 0 15px 40px rgba(0, 100, 0, 0.6);
     }
 
     .floating-cart-btn:active {
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-2px) scale(0.98);
     }
 
     .floating-cart-btn i {
@@ -185,7 +190,7 @@
       position: absolute;
       top: -4px;
       right: -4px;
-      background: #BE123C;
+      background: #006400;
       color: white;
       border-radius: 50%;
       width: 28px;
@@ -251,9 +256,10 @@
     }
 
     .cart-header {
-      background: linear-gradient(135deg, #1c1917, #ec5f01);
+      background: linear-gradient(135deg, #111827, #006400);
       color: white;
-      padding: 1.5rem;
+      padding: 2rem 1.5rem;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
       flex-shrink: 0;
     }
 
@@ -312,8 +318,8 @@
     }
 
     .quantity-btn:hover {
-      background: #D97706;
-      border-color: #D97706;
+      background: #006400;
+      border-color: #006400;
       color: white;
     }
 
@@ -343,7 +349,7 @@
     }
 
     .checkout-form::-webkit-scrollbar-thumb {
-      background: #D97706;
+      background: #006400;
       border-radius: 3px;
     }
 
@@ -361,14 +367,14 @@
     }
 
     .payment-method:hover {
-      border-color: #D97706;
-      background-color: #fff9f5;
+      border-color: #006400;
+      background-color: #f0fdf4;
     }
 
     .payment-method.selected {
-      border-color: #784f04;
+      border-color: #006400;
       background-color: #f0fdf4;
-      box-shadow: 0 0 0 1px #785904;
+      box-shadow: 0 0 0 1px #006400;
     }
 
     .payment-icon {
@@ -385,11 +391,11 @@
     }
 
     .payment-icon.credit-card {
-      color: #785904;
+      color: #006400;
     }
 
     .payment-icon.cash {
-      color: #D97706;
+      color: #006400;
     }
 
     /* Stripe Element Styling */
@@ -404,12 +410,12 @@
     }
 
     .StripeElement--focus {
-      border-color: #D97706;
-      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.1);
+      border-color: #006400;
+      box-shadow: 0 0 0 2px rgba(0, 100, 0, 0.1);
     }
 
     .StripeElement--invalid {
-      border-color: #BE123C;
+      border-color: #006400;
     }
 
     .StripeElement--webkit-autofill {
@@ -447,7 +453,7 @@
     .order-total {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #784f04;
+      color: #006400;
       border-top: 2px solid #ddd;
       padding-top: 0.75rem;
       margin-top: 0.75rem;
@@ -485,7 +491,7 @@
 
     .add-to-cart-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(120, 89, 4, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 100, 0, 0.3);
     }
 
     /* Empty Cart State */
@@ -524,7 +530,7 @@
         <h2 class="text-xl font-serif font-bold">
           <i class="fas fa-shopping-bag mr-2"></i>Your Cart
         </h2>
-        <button id="close-cart-btn" class="text-white hover:text-orange-300 transition">
+        <button id="close-cart-btn" class="text-white hover:text-green-300 transition">
           <i class="fas fa-times text-2xl"></i>
         </button>
       </div>
@@ -558,11 +564,11 @@
 
       <div class="space-y-2">
         <button id="checkout-btn" disabled
-          class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg uppercase text-sm tracking-wider transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+          class="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg uppercase text-sm tracking-wider transition-all disabled:opacity-50 disabled:cursor-not-allowed">
           <i class="fas fa-credit-card mr-2"></i>Proceed to Checkout
         </button>
         <button id="clear-cart-btn"
-          class="w-full py-2 border-2 border-gray-300 hover:border-red-500 hover:text-red-500 text-gray-600 font-medium rounded-lg text-sm transition-all">
+          class="w-full py-2 border-2 border-green-300 hover:border-green-500 hover:text-green-500 text-green-600 font-medium rounded-lg text-sm transition-all">
           <i class="fas fa-trash mr-2"></i>Clear Cart
         </button>
       </div>
@@ -579,12 +585,12 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-orange-100 shadow-sm">
+  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-green-100 shadow-sm">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <div class="flex items-center space-x-3">
         <img src="logo/logo.jpg"
           onerror="this.src='https://placehold.co/100x100/F97316/FFFFFF?text=TENA'" alt="Logo"
-          class="h-14 w-40 object-cover" />
+          class="h-20 w-56 object-cover" />
       </div>
 
       <!-- Store Status Badge (Uses Eastern Time) -->
@@ -606,58 +612,94 @@
         </div>
       </div>
 
-      <!-- Hero/Subscription Section -->
-      <section class="min-h-screen py-8 md:py-16 px-4 bg-cover bg-center bg-no-repeat relative flex items-center" style="background-image: url('./item/background.jpg');">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="container mx-auto max-w-5xl relative z-10">
-          <div
-            class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-orange-100">
-            <div class="p-8 md:p-12 md:w-2/3">
-              <div
-                class="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold mb-4 uppercase tracking-wider">
-                SMS Alerts
-              </div>
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Get Notified About New Inventory!
-              </h3>
-              <p class="text-gray-600 mb-2 text-lg">
-                Enter your name and phone to receive an SMS when we add new
-                inventory or when items are restocked.
-              </p>
-              <p class="text-gray-500 mb-6 text-sm leading-relaxed border-l-4 border-orange-300 pl-3">
-                አዲስ እርድ ሲኖር ቀድመው ይወቁ! ስምዎንና ስልክ ቁጥርዎን አስገብተው "Subscribe" በማድረግ
-                ይመዝገቡ።
-              </p>
+      <!-- Hero Section -->
+      <section class="min-h-[80vh] py-16 px-4 bg-cover bg-center bg-no-repeat relative flex items-center justify-center" style="background-image: url('./item/background.jpg');">
+        <!-- Smooth gradient dark overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white/0"></div>
+        
+        <div class="container mx-auto max-w-4xl relative z-10 text-center flex flex-col items-center">
+          <div class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold mb-6 uppercase tracking-widest border border-white/30 shadow-xl">
+            Premium Ethiopian Groceries
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight font-serif">
+            Fresh Premium <br/> Injera Daily
+            <div class="text-2xl md:text-3xl font-bold mt-4">100% የጤፍ እንጀራ</div>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl drop-shadow-md font-medium">
+            Experience the authentic taste of Ethiopia right here in Decatur. High-quality products, traditionally prepared, just for you.
+          </p>
+          <a href="#inventory-section" class="px-10 py-4 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold rounded-full shadow-[0_0_30px_rgba(0,100,0,0.4)] hover:shadow-[0_0_40px_rgba(0,100,0,0.6)] transition-all transform hover:-translate-y-1 text-lg">
+            Shop Fresh Products
+          </a>
+        </div>
+      </section>
 
-              <form id="subscribe-form" class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input id="subscriber-name" placeholder="Your Name" required
-                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-gray-800 placeholder-gray-400" />
-                  <input id="subscriber-phone" placeholder="Phone (e.g., +15551234567)" required
-                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-gray-800 placeholder-gray-400" />
+      <!-- Products Section -->
+      <section id="inventory-section" class="py-16 px-4 bg-white scroll-mt-20">
+        <div class="container mx-auto max-w-6xl">
+          <div class="flex flex-col items-center justify-center mb-6">
+            <span class="h-px w-8 md:w-12 bg-green-300"></span>
+            <h2 class="text-3xl font-bold text-gray-900 mx-4 text-center">Fresh Injera Available</h2>
+            <span class="h-px w-8 md:w-12 bg-green-300"></span>
+          </div>
+
+          <div id="meat-items-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Items will be loaded here from Firestore -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SMS Subscription Section -->
+      <section class="py-16 px-4 bg-[#FAFAF9] relative">
+        <div class="container mx-auto max-w-5xl relative z-10">
+          <div class="bg-white/80 backdrop-blur-xl rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col md:flex-row border border-gray-100">
+            <div class="p-8 md:p-12 md:w-3/5">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-bold mb-6 uppercase tracking-wider border border-green-100">
+                <i class="fas fa-comment-dots"></i>
+                <span>SMS Alerts</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">
+                Subscribe, Get Notified About New Deals and Your Order Status
+              </h3>
+              <p class="text-gray-600 mb-6 text-lg">
+                Enter your name and phone to receive an SMS when we add new inventory or when items are back in stock.
+              </p>
+              <div class="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg mb-8">
+                <p class="text-gray-700 text-sm font-medium">
+                  ስለ ትእዛዞ እና አዳዲስ አቅርቦቶች መረጃ ለማግኘት ስልክ ቁጥርዎን ይመዝገቡ፡፡
+                </p>
+              </div>
+
+              <form id="subscribe-form" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div class="relative">
+                    <input id="subscriber-name" placeholder="Your Name" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-green-500 focus:ring-2 focus:ring-green-200 text-gray-800 placeholder-gray-400 transition-all outline-none" />
+                  </div>
+                  <div class="relative">
+                    <input id="subscriber-phone" placeholder="Phone (+15551234567)" required class="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:border-green-500 focus:ring-2 focus:ring-green-200 text-gray-800 placeholder-gray-400 transition-all outline-none" />
+                  </div>
                 </div>
                 <div class="flex items-start space-x-3 pt-2">
-                  <input type="checkbox" id="sms_consent" required
-                    class="mt-1 h-4 w-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500" />
-                  <label for="sms_consent" class="text-sm text-gray-600 leading-snug">I agree to receive marketing
-                    texts. የማስታወቂያ መልዕክቶችን ለመቀበል
-                    እስማማለሁ።
-                    <a href="#" class="text-orange-600 hover:underline">Privacy Policy</a></label>
+                  <input type="checkbox" id="sms_consent" required class="mt-1 h-5 w-5 text-green-600 border-gray-300 rounded focus:ring-green-500 cursor-pointer transition-colors" />
+                  <label for="sms_consent" class="text-sm text-gray-600 leading-snug cursor-pointer select-none">
+                    I agree to receive marketing texts. የማስታወቂያ መልዕክቶችን ለመቀበል እስማማለሁ።
+                    <a href="#" class="text-green-600 font-semibold hover:underline decoration-2 underline-offset-2">Privacy Policy</a>
+                  </label>
                 </div>
-                <button
-                  class="w-full md:w-auto px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                <button class="w-full md:w-auto px-8 py-4 bg-gray-900 hover:bg-black text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 mt-4">
                   Subscribe Now
                 </button>
               </form>
             </div>
-            <div
-              class="bg-orange-500 hidden md:w-1/3 md-block md:flex flex items-center justify-center p-8 relative overflow-hidden">
-              <i
-                class="fas fa-bell text-9xl text-orange-400 absolute -bottom-10 -right-10 opacity-50 transform rotate-12"></i>
-              <div class="text-center text-white relative z-10">
-                <div class="text-6xl mb-2">🛒</div>
-                <p class="font-bold text-xl uppercase">Premium Quality</p>
-                <p class="opacity-90">Tena-Mart</p>
+            <div class="bg-gradient-to-br from-pink-500 to-rose-600 hidden md:flex md:w-2/5 items-center justify-center p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8cGF0aCBkPSJNMCA4TDggMFoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+Cjwvc3ZnPg==')] opacity-30"></div>
+              <i class="fas fa-mobile-alt text-[12rem] text-white/10 absolute -bottom-10 -right-5 transform rotate-12"></i>
+              <div class="text-center text-white relative z-10 flex flex-col items-center">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 shadow-inner">
+                  <i class="fas fa-bell text-3xl"></i>
+                </div>
+                <h4 class="font-bold text-2xl mb-2">Be The First</h4>
+                <p class="opacity-90 font-medium">Get exclusive updates on fresh stock</p>
               </div>
             </div>
           </div>
@@ -670,20 +712,20 @@
           <div
             class="bg-gray-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center shadow-2xl border border-gray-700">
             <div class="text-center md:text-left mb-8 md:mb-0">
-              <h3 class="text-3xl font-bold text-orange-500 mb-4">
+              <h3 class="text-3xl font-bold text-green-500 mb-4">
                 Visit Us Today
               </h3>
               <div class="space-y-4">
                 <p class="text-gray-200 text-lg flex items-center justify-center md:justify-start">
-                  <i class="fas fa-map-marker-alt mr-3 text-orange-500 text-xl"></i>
+                  <i class="fas fa-map-marker-alt mr-3 text-green-500 text-xl"></i>
                   <span>Decatur, GA 30032</span>
                 </p>
                 <p class="text-gray-200 text-lg flex items-center justify-center md:justify-start">
-                  <i class="fas fa-phone-alt mr-3 text-orange-500 text-xl"></i>
+                  <i class="fas fa-phone-alt mr-3 text-green-500 text-xl"></i>
                   <span>+1 404-997-3785</span>
                 </p>
                 <p class="text-gray-400 text-sm mt-4">
-                  <i class="fas fa-clock mr-2 text-orange-400"></i>
+                  <i class="fas fa-clock mr-2 text-green-400"></i>
                   <span id="dynamic-store-hours">Loading hours...</span>
                 </p>
               </div>
@@ -691,7 +733,7 @@
             <div class="w-full md:w-auto flex flex-col space-y-3">
               <a href="https://www.google.com/maps/search/?api=1&query=Decatur+GA+30032"
                 target="_blank"
-                class="text-center px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl transition-all shadow-lg">
+                class="text-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition-all shadow-lg">
                 <i class="fas fa-directions mr-2"></i> Get Directions
               </a>
               <a href="tel:+14049973785"
@@ -707,7 +749,7 @@
       <footer class="bg-gray-950 py-10 border-t border-gray-800">
         <div class="container mx-auto px-4 text-center">
           <div class="mb-6">
-            <p class="text-gray-400 font-semibold mb-1">Tena-Mart</p>
+            <p class="text-green-400 font-semibold mb-1">Tena-Mart</p>
             <p class="text-gray-600 text-sm">
               Decatur, GA 30032
             </p>
@@ -718,64 +760,66 @@
           </p>
 
           <button id="footer-admin-btn"
-            class="text-xs text-gray-700 hover:text-orange-500 transition-colors border border-gray-800 rounded-full px-4 py-1 hover:border-orange-500">
+            class="text-xs text-gray-700 hover:text-green-500 transition-colors border border-gray-800 rounded-full px-4 py-1 hover:border-green-500">
             <i class="fas fa-lock-open mr-1"></i> Staff Access
           </button>
 
           <p class="mt-6 text-gray-800 text-xs">
             <a href="https://globytesolution.com" target="_blank" rel="noopener"
-              class="hover:text-orange-600 transition-colors">Powered by Globyte Solution</a>
+              class="hover:text-green-600 transition-colors">Powered by Globyte Solution</a>
             <a href="http://meedish.com/" target="_blank" rel="noopener"
-              class="hover:text-orange-600 transition-colors">& Meedish </a>
+              class="hover:text-green-600 transition-colors">& Meedish </a>
           </p>
         </div>
       </footer>
     </div>
-
     <!-- Admin Login -->
-    <div id="admin-login" class="hidden min-h-screen flex items-center justify-center p-4 bg-orange-50">
-      <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-orange-100">
-        <div class="text-center mb-8">
-          <div class="bg-orange-100 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-user-shield text-2xl text-orange-600"></i>
+    <div id="admin-login" class="hidden min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-green-50 via-white to-green-50">
+      <div class="bg-white/70 backdrop-blur-2xl p-10 rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] w-full max-w-md border border-white">
+        <div class="text-center mb-10">
+          <div class="bg-gradient-to-br from-green-500 to-green-600 h-20 w-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30 transform rotate-3">
+            <i class="fas fa-user-shield text-3xl text-white"></i>
           </div>
-          <h2 class="text-2xl font-bold text-gray-800">Admin Login</h2>
+          <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight">Admin Portal</h2>
+          <p class="text-gray-500 mt-2 font-medium">Sign in to manage the store</p>
         </div>
-        <form id="admin-login-form" class="space-y-4">
+        <form id="admin-login-form" class="space-y-6">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Username</label>
             <input id="admin-username" type="text" required
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500" />
+              class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all shadow-sm outline-none" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
             <input id="admin-password" type="password" required
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500" />
+              class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all shadow-sm outline-none" />
           </div>
           <button
-            class="w-full py-3 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors shadow-md">
+            class="w-full py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
             Login
           </button>
-          <p id="login-error-message" class="text-red-500 text-sm text-center hidden bg-red-50 p-2 rounded">
+          <p id="login-error-message" class="text-red-500 text-sm text-center hidden bg-red-50 border border-red-200 p-3 rounded-lg font-medium">
             Invalid credentials
           </p>
         </form>
-        <div class="mt-6 text-center">
-          <button id="home-btn" class="text-gray-500 hover:text-orange-600 text-sm font-medium">
+        <div class="mt-8 text-center">
+          <button id="home-btn" class="text-gray-500 hover:text-green-600 text-sm font-medium">
             <i class="fas fa-arrow-left mr-1"></i> Back to Store
           </button>
         </div>
       </div>
     </div>
     <!-- Admin Dashboard -->
-    <div id="admin-view" class="hidden min-h-screen bg-gray-50">
-      <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-          <span class="font-bold text-xl flex items-center">Admin Panel</span>
+    <div id="admin-view" class="hidden min-h-screen bg-[#F8FAFC]">
+      <nav class="bg-white/80 backdrop-blur-xl sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+          <span class="font-extrabold text-xl flex items-center text-gray-900 tracking-tight">
+            <i class="fas fa-chart-pie mr-2 text-green-600"></i>Dashboard
+          </span>
           <div class="flex items-center space-x-4">
             <button id="admin-logout-btn"
-              class="px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded text-sm font-bold shadow transition-colors">
-              Logout
+              class="px-5 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-bold transition-colors border border-gray-200">
+              <i class="fas fa-sign-out-alt mr-2"></i>Logout
             </button>
           </div>
         </div>
@@ -783,96 +827,96 @@
 
       <div class="container mx-auto p-4 md:p-8 max-w-7xl">
         <!-- Quick Stats Section -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-            <div class="flex items-center">
-              <div class="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center mr-3">
-                <i class="fas fa-box text-orange-600"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div class="bg-white p-6 rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden group">
+            <div class="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110">
+              <i class="fas fa-box text-8xl text-green-500"></i>
+            </div>
+            <div class="flex items-center relative z-10">
+              <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 shadow-lg shadow-green-500/30 flex items-center justify-center mr-5">
+                <i class="fas fa-box text-2xl text-white"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Total Products</p>
-                <p class="text-xl font-bold" id="total-products-count">0</p>
+                <p class="text-sm text-gray-500 font-bold tracking-wider uppercase">Total Products</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1" id="total-products-count">0</p>
               </div>
             </div>
           </div>
-          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-            <div class="flex items-center">
-              <div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                <i class="fas fa-users text-green-600"></i>
+          <div class="bg-white p-6 rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden group">
+            <div class="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110">
+              <i class="fas fa-users text-8xl text-emerald-500"></i>
+            </div>
+            <div class="flex items-center relative z-10">
+              <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 shadow-lg shadow-emerald-500/30 flex items-center justify-center mr-5">
+                <i class="fas fa-users text-2xl text-white"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Subscribers</p>
-                <p class="text-xl font-bold" id="total-subscribers-count">0</p>
+                <p class="text-sm text-gray-500 font-bold tracking-wider uppercase">Subscribers</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1" id="total-subscribers-count">0</p>
               </div>
             </div>
           </div>
-          <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-            <div class="flex items-center">
-              <div class="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                <i class="fas fa-exclamation-triangle text-red-600"></i>
+          <div class="bg-white p-6 rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden group">
+            <div class="absolute -top-4 -right-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110">
+              <i class="fas fa-exclamation-triangle text-8xl text-orange-500"></i>
+            </div>
+            <div class="flex items-center relative z-10">
+              <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 shadow-lg shadow-red-500/30 flex items-center justify-center mr-5">
+                <i class="fas fa-exclamation-triangle text-2xl text-white"></i>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Out of Stock</p>
-                <p class="text-xl font-bold" id="out-of-stock-count">0</p>
+                <p class="text-sm text-gray-500 font-bold tracking-wider uppercase">Out of Stock</p>
+                <p class="text-4xl font-extrabold text-gray-900 mt-1" id="out-of-stock-count">0</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Broadcast Messages Section (UPDATED with Announce Button) -->
-        <div class="bg-white rounded-xl shadow-sm border border-orange-100 mb-8">
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-              <i class="fas fa-bullhorn mr-3 text-orange-600"></i>Broadcast Messages
+        <!-- Broadcast Messages Section -->
+        <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-10 overflow-hidden">
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <div class="bg-green-100 p-2 text-green-600 rounded-lg mr-3"><i class="fas fa-bullhorn"></i></div>
+              Broadcast Messages
             </h3>
 
-            <!-- Quick Announce Button Section -->
-            <!-- <div class="mb-6 p-4 bg-orange-50 rounded-lg border border-orange-200">
-              <div class="flex flex-col md:flex-row md:items-center justify-between">
-                <div class="mb-4 md:mb-0">
-                  <h4 class="font-bold text-gray-800 text-lg">Product Restock Alert</h4>
-                  <p class="text-gray-600 text-sm mt-1">Send restock notifications for specific products</p>
-                </div>
-                <button id="select-products-alert-btn"
-                  class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow-md transition-colors whitespace-nowrap">
-                  <i class="fas fa-bullhorn mr-2"></i>Select Products to Alert
-                </button>
-              </div>
-            </div> -->
             <!-- Quick Notification Button -->
-            <div class="mb-8 p-4 bg-red-50 rounded border">
-              <h3 class="font-semibold text-gray-800 mb-2"><i class="fas fa-bullhorn text-red-500 mr-2"></i>Quick
-                Notifications</h3>
+            <div class="mb-8 p-5 bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl border border-red-100 flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <h4 class="font-bold text-gray-900 text-lg flex items-center"><i class="fas fa-bolt text-amber-500 mr-2"></i>Quick Alerts</h4>
+                <p class="text-sm text-gray-600 mt-1">Instantly notify all subscribers about key inventory updates.</p>
+              </div>
               <button id="beef-in-stock-btn"
-                class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded"><i
-                  class="fas fa-bread-slice mr-2"></i>Injera In Stock</button>
+                class="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-bold rounded-xl shadow-md transition-all hover:-translate-y-0.5 whitespace-nowrap">
+                <i class="fas fa-bread-slice mr-2"></i>Injera Restocked!
+              </button>
             </div>
-            <!-- Custom Message Section -->
-            <div class="pt-6 border-t border-gray-200">
-              <h4 class="font-bold text-gray-800 mb-4 flex items-center">
-                <i class="fas fa-edit mr-2 text-orange-600"></i>Custom Message
-              </h4>
-              <p class="text-gray-600 mb-6">Send personalized messages to all subscribers</p>
 
-              <div class="mb-6">
-                <label for="custom-message" class="block text-sm font-medium text-gray-700 mb-2">Message
-                  Content:</label>
+            <!-- Custom Message Section -->
+            <div class="pt-8 border-t border-gray-100">
+              <h4 class="font-bold text-gray-900 mb-2 flex items-center text-lg">
+                <i class="fas fa-pen-fancy mr-2 text-green-500"></i>Custom Message
+              </h4>
+              <p class="text-gray-500 mb-6 text-sm">Send personalized SMS messages directly to all your active subscribers.</p>
+
+              <div class="mb-6 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <label for="custom-message" class="block text-sm font-bold text-gray-700 mb-3">Message Content:</label>
                 <textarea id="custom-message" rows="4"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  placeholder="Type your message here..."></textarea>
-                <div class="flex justify-between items-center mt-2">
-                  <p class="text-xs text-gray-500">Characters: <span id="char-count">0</span>/160</p>
-                  <div class="flex gap-2">
+                  class="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-all shadow-inner outline-none resize-y"
+                  placeholder="Type your brilliant announcement here..."></textarea>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 gap-4">
+                  <p class="text-xs font-semibold text-gray-400 bg-white px-3 py-1 rounded-full border border-gray-200 shadow-sm">Characters: <span id="char-count" class="text-gray-700">0</span>/160</p>
+                  <div class="flex flex-wrap gap-2">
                     <button id="template-announcement-btn"
-                      class="px-3 py-1 bg-orange-600 hover:bg-orange-700 text-white rounded-md text-sm transition-colors">
+                      class="px-4 py-1.5 bg-white border border-green-200 text-green-600 hover:bg-green-50 font-semibold rounded-lg text-sm transition-colors shadow-sm">
                       Special Offer
                     </button>
                     <button id="template-restock-btn"
-                      class="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm transition-colors">
+                      class="px-4 py-1.5 bg-white border border-emerald-200 text-emerald-600 hover:bg-emerald-50 font-semibold rounded-lg text-sm transition-colors shadow-sm">
                       New Arrival
                     </button>
                     <button id="template-holiday-btn"
-                      class="px-3 py-1 bg-gray-600 hover:bg-gray-700 text-white rounded-md text-sm transition-colors">
+                      class="px-4 py-1.5 bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 font-semibold rounded-lg text-sm transition-colors shadow-sm">
                       Holiday Hours
                     </button>
                   </div>
@@ -880,195 +924,202 @@
               </div>
 
               <button id="send-custom-message-btn"
-                class="w-full px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow-md transition-colors">
+                class="w-full sm:w-auto px-8 py-3.5 bg-gray-900 hover:bg-black text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all float-right">
                 <i class="fas fa-paper-plane mr-2"></i>Send Custom Message
               </button>
+              <div class="clear-both"></div>
             </div>
           </div>
         </div>
 
         <!-- ==================== RESERVATIONS SECTION ==================== -->
-        <div class="bg-white rounded-xl shadow-sm border border-orange-100 mb-8">
-          <div class="p-4 md:p-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
-              <h3 class="text-xl font-bold text-gray-800 flex items-center">
-                <i class="fas fa-receipt mr-3 text-orange-600"></i>Zelle Reservations
-              </h3>
-              <span class="text-sm text-gray-500">Orders awaiting payment confirmation</span>
+        <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-10 overflow-hidden">
+          <div class="p-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4 border-b border-gray-100 pb-6">
+              <div>
+                <h3 class="text-2xl font-bold text-gray-900 flex items-center mb-1">
+                  <div class="bg-blue-100 p-2 text-blue-600 rounded-lg mr-3"><i class="fas fa-receipt"></i></div>
+                  Order Reservations
+                </h3>
+                <span class="text-sm text-gray-500 font-medium">Manage pending and confirmed Zelle orders</span>
+              </div>
+              
+              <!-- Filter Tabs -->
+              <div class="flex flex-wrap gap-2 bg-gray-50 p-1.5 rounded-xl border border-gray-100">
+                <button onclick="filterReservations('all')" id="res-filter-all"
+                  class="res-filter-btn px-4 py-2 text-sm rounded-lg bg-green-600 text-white font-bold shadow-sm transition-all">All</button>
+                <button onclick="filterReservations('pending_Zelle')" id="res-filter-pending_Zelle"
+                  class="res-filter-btn px-4 py-2 text-sm rounded-lg text-gray-600 font-semibold hover:bg-white hover:shadow-sm transition-all">Pending</button>
+                <button onclick="filterReservations('confirmed')" id="res-filter-confirmed"
+                  class="res-filter-btn px-4 py-2 text-sm rounded-lg text-gray-600 font-semibold hover:bg-white hover:shadow-sm transition-all">Confirmed</button>
+                <button onclick="filterReservations('ready')" id="res-filter-ready"
+                  class="res-filter-btn px-4 py-2 text-sm rounded-lg text-gray-600 font-semibold hover:bg-white hover:shadow-sm transition-all">Ready</button>
+              </div>
             </div>
-            <!-- Filter Tabs -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <button onclick="filterReservations('all')" id="res-filter-all"
-                class="res-filter-btn px-3 py-1.5 text-sm rounded-full bg-orange-600 text-white font-semibold">All</button>
-              <button onclick="filterReservations('pending_Zelle')" id="res-filter-pending_Zelle"
-                class="res-filter-btn px-3 py-1.5 text-sm rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-orange-100">Pending
-                Payment</button>
-              <button onclick="filterReservations('confirmed')" id="res-filter-confirmed"
-                class="res-filter-btn px-3 py-1.5 text-sm rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-orange-100">Confirmed</button>
-              <button onclick="filterReservations('ready')" id="res-filter-ready"
-                class="res-filter-btn px-3 py-1.5 text-sm rounded-full bg-gray-100 text-gray-600 font-semibold hover:bg-orange-100">Ready</button>
-            </div>
-            <div id="admin-reservations-list" class="space-y-3">
-              <div class="text-center py-8 text-gray-400">
-                <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
-                <p>Loading reservations...</p>
+            
+            <div id="admin-reservations-list" class="space-y-4">
+              <div class="text-center py-12 text-gray-400 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                <i class="fas fa-spinner fa-spin text-3xl mb-3 text-green-400"></i>
+                <p class="font-medium">Loading reservations...</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- ==================== Zelle PAYMENT SETTINGS ==================== -->
-        <div class="bg-white rounded-xl shadow-sm border border-orange-100 mb-8">
-          <div class="p-4 md:p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-1 flex items-center">
-              <i class="fas fa-mobile-alt mr-3 text-orange-600"></i>Zelle Payment Settings
+        <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-10 overflow-hidden">
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center">
+              <i class="fas fa-university mr-3 text-green-500"></i>Payment Settings
             </h3>
-            <p class="text-gray-500 text-sm mb-4">Configure the Zelle / Zelle number and instructions shown to customers
-              at checkout.</p>
-            <div class="space-y-4">
+            <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-gray-100">Configure the Zelle number and instructions presented to customers securely during checkout.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Zelle / Zelle Phone Number</label>
+                <label class="block text-sm font-bold text-gray-700 mb-2">Zelle Phone / Email</label>
                 <input id="Zelle-phone-input" type="text" placeholder="e.g. +1 (214) 555-0100"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm" />
+                  class="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 outline-none transition-all font-medium" />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Payment Instructions</label>
+                <label class="block text-sm font-bold text-gray-700 mb-2">Payment Instructions</label>
                 <textarea id="Zelle-instructions-input" rows="3"
-                  placeholder="e.g. Please send payment via Zelle / Zelle to the number above."
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"></textarea>
+                  placeholder="e.g. Please send payment via Zelle to the info above."
+                  class="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 outline-none transition-all resize-y text-sm"></textarea>
               </div>
+            </div>
+            
+            <div class="mt-6 pt-6 border-t border-gray-100 flex justify-end">
               <button id="save-Zelle-settings-btn"
-                class="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition-colors text-sm">
-                <i class="fas fa-save mr-2"></i>Save Zelle Settings
+                class="px-8 py-3 bg-gray-900 hover:bg-black text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
+                <i class="fas fa-save mr-2"></i>Apply Changes
               </button>
             </div>
           </div>
         </div>
 
-        <!-- ==================== MESSAGE TEMPLATES ==================== -->
-        <div class="bg-white rounded-xl shadow-sm border border-orange-100 mb-8">
-          <div class="p-4 md:p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-1 flex items-center">
-              <i class="fas fa-envelope-open-text mr-3 text-orange-600"></i>SMS Notification Templates
-            </h3>
-            <p class="text-gray-500 text-sm mb-4">These templates are saved and used to send notifications. Use <code
-                class="bg-gray-100 px-1 rounded">{orderRef}</code>, <code
-                class="bg-gray-100 px-1 rounded">{name}</code>, <code class="bg-gray-100 px-1 rounded">{total}</code>,
-              <code class="bg-gray-100 px-1 rounded">{items}</code> as placeholders.
-            </p>
-            <div class="space-y-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">New Order Notification (Owner)</label>
-                <textarea id="tmpl-orderPlaced" rows="2"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  placeholder="New order {orderRef} from {name}. Total: ${total}."></textarea>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Template 1 (Custom)</label>
-                <textarea id="tmpl-template1" rows="2"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  placeholder="Your order {orderRef} is ready for pickup!"></textarea>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Template 2 (Custom)</label>
-                <textarea id="tmpl-template2" rows="2"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  placeholder="Special Offer: Get 10% off your next order!"></textarea>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Template 3 (Custom)</label>
-                <textarea id="tmpl-template3" rows="2"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  placeholder="We are currently out of stock for {item}."></textarea>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Template 4 (Custom)</label>
-                <textarea id="tmpl-template4" rows="2"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  placeholder="Holiday Hours: We will be closed on..."></textarea>
-              </div>
-              <button id="save-templates-btn"
-                class="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition-colors text-sm">
-                <i class="fas fa-save mr-2"></i>Save Templates
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Store Hours Section -->
-        <div class="bg-white rounded-xl shadow-sm border border-orange-100 mb-8">
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
-              <i class="fas fa-clock mr-3 text-orange-600"></i>Store Hours
-            </h3>
-            <p class="text-gray-600 mb-6">Set your store opening hours (Eastern Time)</p>
-
-            <div id="store-hours-container">
-              <!-- Store hours will be rendered here -->
-            </div>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-6">
-            <div class="flex justify-between items-center flex-wrap gap-2">
-              <div class="flex items-center gap-3">
-                <h3 class="font-bold text-xl text-gray-800">Product List</h3>
-                <div class="flex bg-gray-100 p-1 rounded-lg border border-gray-200">
-                  <button id="admin-view-market-btn" class="px-3 py-1 rounded bg-white shadow text-sm font-bold text-orange-600 transition-all">Market</button>
-                  <button id="admin-view-restaurant-btn" class="px-3 py-1 rounded text-sm font-bold text-gray-500 hover:text-gray-700 transition-all">Restaurant</button>
+        <!-- ==================== CONFIGURATION WRAPPER ==================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
+          
+          <!-- Message Templates -->
+          <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
+            <div class="p-8">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                <i class="fas fa-envelope-open-text mr-3 text-green-500"></i>SMS Templates
+              </h3>
+              <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-gray-100 leading-relaxed">
+                Save time with pre-built templates. Available placeholders: <code class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-bold">{orderRef}</code>, <code class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-bold">{name}</code>, <code class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-bold">{total}</code>, <code class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-bold">{items}</code>.
+              </p>
+              
+              <div class="space-y-5">
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">New Order Template</label>
+                  <textarea id="tmpl-orderPlaced" rows="2"
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-pink-500 outline-none transition-all"
+                    placeholder="New order {orderRef} from {name}. Total: ${total}."></textarea>
                 </div>
-              </div>
-              <div class="flex items-center space-x-2">
-                <div id="admin-restaurant-locked-msg" class="hidden text-sm text-red-600 font-bold bg-red-50 px-3 py-2 rounded border border-red-200">
-                  <i class="fas fa-lock mr-1"></i> View Only
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Custom Slot 1</label>
+                  <textarea id="tmpl-template1" rows="2"
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-pink-500 outline-none transition-all"
+                    placeholder="Your order {orderRef} is ready for pickup!"></textarea>
                 </div>
-                <button id="add-product-btn"
-                  class="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition-colors">
-                  <i class="fas fa-plus mr-2"></i>Add Item
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Custom Slot 2</label>
+                  <textarea id="tmpl-template2" rows="2"
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-pink-500 outline-none transition-all"
+                    placeholder="Special Offer: Get 10% off your next order!"></textarea>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Custom Slot 3</label>
+                  <textarea id="tmpl-template3" rows="2"
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-pink-500 outline-none transition-all"
+                    placeholder="We are currently out of stock for {item}."></textarea>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                  <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Custom Slot 4</label>
+                  <textarea id="tmpl-template4" rows="2"
+                    class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-pink-500 outline-none transition-all"
+                    placeholder="Holiday Hours: We will be closed on..."></textarea>
+                </div>
+                <button id="save-templates-btn"
+                  class="w-full py-3.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl transition-all shadow-md hover:shadow-lg mt-2 flex justify-center items-center">
+                  <i class="fas fa-save mr-2"></i>Save Templates
                 </button>
               </div>
             </div>
-            <div id="product-management-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
           </div>
 
+          <!-- Store Hours -->
+          <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden h-fit">
+            <div class="p-8">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                <i class="fas fa-clock mr-3 text-green-500"></i>Store Hours
+              </h3>
+              <p class="text-gray-500 text-sm mb-6 pb-6 border-b border-gray-100">Configure business hours. This updates the site-wide banner automatically.</p>
 
-
-          <div class="lg:col-span-1">
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-
-
-              <!-- <div class="p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
-                <h3 class="font-bold text-gray-800">Subscribers</h3>
-                <span class="text-sm text-gray-500" id="subscriber-count-display">0 subscribers</span>
+              <div id="store-hours-container" class="space-y-2">
+                <!-- Store hours will be rendered here dynamically -->
               </div>
-              <div id="subscribers-list" class="max-h-[600px] overflow-y-auto"></div>
-             -->
-              <!-- Subscribers Section (Hidden by default) -->
-              <!-- Subscribers Section (Hidden by default) -->
-              <!-- Subscribers Section (Hidden by default) -->
-              <div class="mb-8">
-                <div class="flex justify-between items-center mb-4">
-                  <h3 class="font-semibold text-gray-800"><i class="fas fa-users mr-2 text-red-500"></i>Subscribers</h3>
-                  <button id="toggle-subscribers-btn" class="px-4 py-2 bg-orange-600 text-white rounded">
-                    <i class="fas fa-eye mr-2 text-white"></i>Show Subscribers
+            </div>
+          </div>
+        </div>
+        <!-- ==================== MAIN GRIDS ==================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <!-- Product List Section -->
+          <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 h-full">
+              <div class="flex justify-between items-center flex-wrap gap-4 border-b border-gray-100 pb-6 mb-6">
+                <div class="flex items-center gap-4">
+                  <h3 class="font-bold text-2xl text-gray-900 flex items-center">
+                    <div class="bg-indigo-100 p-2 text-indigo-600 rounded-lg mr-3"><i class="fas fa-boxes"></i></div>
+                    Inventory
+                  </h3>
+                  <div class="flex bg-gray-100 p-1.5 rounded-xl border border-gray-200 shadow-inner">
+                    <button id="admin-view-market-btn" class="px-5 py-2 rounded-lg bg-white shadow-sm text-green-600 font-bold transition-all">Market</button>
+                    <button id="admin-view-restaurant-btn" class="px-5 py-2 rounded-lg text-gray-600 font-semibold hover:text-gray-900 transition-all">Restaurant</button>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div id="admin-restaurant-locked-msg" class="hidden text-sm text-red-600 font-bold bg-red-50 px-4 py-2 rounded-lg border border-red-200">
+                    <i class="fas fa-lock mr-2"></i> View Only
+                  </div>
+                  <button id="add-product-btn"
+                    class="px-6 py-2.5 bg-gray-900 hover:bg-black text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center">
+                    <i class="fas fa-plus mr-2"></i>Add Item
+                  </button>
+                </div>
+              </div>
+              <div id="product-management-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+            </div>
+          </div>
+
+          <!-- Subscribers Section -->
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-[1.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden h-full flex flex-col">
+              <div class="p-8 flex-grow">
+                <div class="flex justify-between items-center border-b border-gray-100 pb-6 mb-6">
+                  <h3 class="font-bold text-2xl text-gray-900 flex items-center">
+                    <div class="bg-emerald-100 p-2 text-emerald-600 rounded-lg mr-3"><i class="fas fa-users"></i></div>
+                    CRM
+                  </h3>
+                  <button id="toggle-subscribers-btn" class="px-5 py-2 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white font-bold rounded-xl shadow-sm transition-all text-sm">
+                    <i class="fas fa-eye mr-2"></i>View
                   </button>
                 </div>
 
                 <!-- Subscribers container (hidden by default) -->
-                <div id="subscribers-container" class="hidden bg-white rounded-lg shadow p-4">
-                  <div class="mb-4 flex justify-between items-center">
+                <div id="subscribers-container" class="hidden">
+                  <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100 mb-6 flex justify-between items-center">
                     <div>
-                      <p class="text-gray-600">
-                        Total subscribers: <span id="total-subscribers" class="font-bold">0</span>
-                      </p>
-                      <div id="pagination-info" class="text-sm text-gray-500 mt-1">
-                        Showing <span id="page-start">0</span>-<span id="page-end">0</span> of <span
-                          id="total-count">0</span>
+                      <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Active Subs</p>
+                      <p class="text-3xl font-extrabold text-gray-900 mt-1" id="total-subscribers">0</p>
+                      <div id="pagination-info" class="text-xs text-gray-400 font-medium mt-1">
+                        Showing <span id="page-start">0</span>-<span id="page-end">0</span> of <span id="total-count">0</span>
                       </div>
                     </div>
-                    <div class="flex items-center space-x-2">
-                      <label for="subscribers-per-page" class="text-sm text-gray-600">Show:</label>
-                      <select id="subscribers-per-page" class="px-2 py-1 border rounded text-sm">
+                    <div class="flex flex-col items-end gap-2">
+                      <label for="subscribers-per-page" class="text-xs font-bold text-gray-500 uppercase tracking-wide">Per Page</label>
+                      <select id="subscribers-per-page" class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm font-semibold focus:ring-2 focus:ring-emerald-500 outline-none">
                         <option value="5">5</option>
                         <option value="10" selected>10</option>
                         <option value="20">20</option>
@@ -1078,15 +1129,14 @@
                   </div>
 
                   <!-- Subscribers list container -->
-                  <div id="subscribers-list" class="max-h-[400px] overflow-y-auto mb-4"></div>
+                  <div id="subscribers-list" class="max-h-[500px] overflow-y-auto pr-2 space-y-3 mb-6"></div>
 
                   <!-- Pagination controls -->
-                  <div id="pagination-controls" class="hidden flex justify-center items-center space-x-2">
-                    <div id="pagination-buttons" class="flex items-center space-x-1"></div>
+                  <div id="pagination-controls" class="hidden flex justify-center items-center">
+                    <div id="pagination-buttons" class="flex gap-2 bg-gray-50 p-1 rounded-xl border border-gray-100"></div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -1153,7 +1203,7 @@
               Cancel
             </button>
             <button type="submit"
-              class="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold transition-colors">
+              class="px-6 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg font-bold transition-colors">
               Save Product
             </button>
           </div>
@@ -1202,7 +1252,7 @@
             Cancel
           </button>
           <button id="confirm-custom-message-btn"
-            class="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold transition-colors">
+            class="px-6 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg font-bold transition-colors">
             Send Message
           </button>
         </div>
@@ -1963,7 +2013,7 @@
           // RESTRICTION: Only enjera and restaurant products can be purchased online
           if (!isEnjera && !isRestaurant) {
             btn.innerHTML = `<i class="fas fa-store mr-2"></i>In-Store Only`;
-            btn.classList.remove('bg-emerald-600', 'bg-orange-600', 'hover:bg-emerald-700', 'hover:bg-orange-700');
+            btn.classList.remove('bg-emerald-600', 'bg-pink-600', 'hover:bg-emerald-700', 'hover:bg-pink-700');
             btn.classList.add('bg-gray-300', 'cursor-not-allowed');
             btn.disabled = true;
             return;
@@ -1985,7 +2035,7 @@
             `;
             btn.classList.remove('bg-emerald-600');
             if (canAddToCart) {
-              btn.classList.add('bg-orange-600', 'hover:bg-orange-700');
+              btn.classList.add('bg-pink-600', 'hover:bg-pink-700');
               btn.classList.remove('bg-gray-300', 'cursor-not-allowed');
               btn.disabled = false;
             } else {
@@ -2911,7 +2961,7 @@
             Cancel
           </button>
           <button id="send-selected-products-alert" 
-                  class="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold transition-colors disabled:opacity-50"
+                  class="px-6 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg font-bold transition-colors disabled:opacity-50"
                   disabled>
             Send Alert for Selected Products
           </button>
@@ -2977,8 +3027,7 @@
         filteredData.forEach((item) => {
           const isOut = item.stockStatus === "OUT_OF_STOCK";
           const card = document.createElement("div");
-          card.className = `product-card bg-white rounded-xl shadow overflow-hidden flex flex-col ${isOut ? "opacity-70" : ""
-            }`;
+          card.className = `product-card flex flex-col ${isOut ? "opacity-70" : ""}`;
 
           // Use proper image URL or placeholder
           const imageUrl =
@@ -2996,26 +3045,26 @@
                  onerror="this.onerror=null; this.src='https://placehold.co/400x400/F97316/FFFFFF?text=Product'">
             ${isOut
               ? `
-              <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                <span class="bg-red-600 text-white px-3 py-1 rounded font-bold text-sm uppercase">Sold Out</span>
+              <div class="absolute inset-0 bg-black/60 flex items-center justify-center backdrop-blur-sm">
+                <span class="bg-red-600/90 text-white px-4 py-2 rounded-full font-bold text-sm uppercase tracking-wider shadow-lg">Sold Out</span>
               </div>
             `
               : ""
             }
           </div>
-          <div class="p-5 flex-grow flex flex-col">
-            <h3 class="text-lg font-bold text-gray-800 mb-2">${item.name || "Unnamed Product"}</h3>
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">${item.name || "Unnamed Product"}</h3>
             <div class="mt-auto pt-4 border-t border-gray-100">
-              <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center justify-between mb-4">
                 ${item.price && Number(item.price) > 0 ?
-              `<p class="text-xl font-bold text-orange-600">$${Number(item.price).toFixed(2)}</p>` :
+              `<p class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">$${Number(item.price).toFixed(2)}</p>` :
               `<p class="text-sm text-gray-500 italic"> </p>`}
                <span class="status-tag ${!storeOpen
               ? "status-out_of_stock"
               : item.stockStatus === "IN_STOCK"
                 ? "status-in_stock"
                 : "status-out_of_stock"
-            }">
+            } shadow-sm">
               <div class="flex flex-col items-center">
                 <span class="text-[10px] font-bold leading-tight">
                   ${!storeOpen
@@ -3036,10 +3085,10 @@
               </div>
             </span>
               </div>
-              ${item.stockQuantity !== undefined && item.stockQuantity !== null && item.stockQuantity > 0 ? `<p class="text-sm text-orange-600 font-bold mb-3">Only ${item.stockQuantity} left</p>` : ``}
+              ${item.stockQuantity !== undefined && item.stockQuantity !== null && item.stockQuantity > 0 ? `<p class="text-sm text-green-600 font-bold mb-4 flex items-center"><i class="fas fa-fire mr-1"></i>Only ${item.stockQuantity} left</p>` : ``}
 
                <!-- Add to Cart Button -->
-              <button class="w-full py-2 px-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center add-to-cart-btn disabled:opacity-50 disabled:cursor-not-allowed"
+              <button class="w-full py-3 px-4 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center add-to-cart-btn disabled:opacity-50 disabled:cursor-not-allowed"
                       data-product-id="${item.id}"
                       onclick="window.addToCartWrapper('${item.id}')">
                 <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
@@ -3083,26 +3132,28 @@
         filteredData.forEach((item) => {
           const div = document.createElement("div");
           div.className =
-            "bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col items-center";
+            "bg-white p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-center hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all";
           div.innerHTML = `
-          <img src="${item.imageUrl ||
-            "https://placehold.co/100x100/F97316/FFFFFF?text=" +
-            encodeURIComponent(item.name.substring(0, 10))
-            }" 
-               class="h-24 w-24 object-cover rounded-lg mb-3" 
-               alt="${item.name}"
-               onerror="this.src='https://placehold.co/100x100/F97316/FFFFFF?text=${encodeURIComponent(
-              item.name.substring(0, 10)
-            )}'" />
-          <h4 class="font-bold text-gray-800 text-center mb-1">${item.name}</h4>
+          <div class="relative w-full aspect-square mb-4 rounded-xl overflow-hidden shadow-sm">
+            <img src="${item.imageUrl ||
+              "https://placehold.co/100x100/F97316/FFFFFF?text=" +
+              encodeURIComponent(item.name.substring(0, 10))
+              }" 
+                 class="w-full h-full object-cover" 
+                 alt="${item.name}"
+                 onerror="this.src='https://placehold.co/100x100/F97316/FFFFFF?text=${encodeURIComponent(
+                item.name.substring(0, 10)
+              )}'" />
+          </div>
+          <h4 class="font-extrabold text-gray-900 text-lg text-center leading-tight mb-2">${item.name}</h4>
            ${item.price && Number(item.price) > 0 ?
-              `<p class="text-sm text-gray-500 mb-2">$${Number(item.price).toFixed(2)}</p>` :
-              `<p class="text-sm text-gray-500 italic mb-2"> </p>`}
+              `<p class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 mb-3">$${Number(item.price).toFixed(2)}</p>` :
+              `<p class="text-sm text-gray-500 italic mb-3"> </p>`}
 
          <span class="status-tag ${item.stockStatus === "IN_STOCK"
               ? "status-in_stock"
               : "status-out_of_stock"
-            } mb-3">
+            } mb-4 shadow-sm">
   <div class="flex flex-col items-center">
     <span class="text-[10px] font-bold leading-tight">
       ${item.stockStatus === "IN_STOCK" ? "አለ" : "አልቆአል"}
@@ -3117,12 +3168,15 @@
           let stockControlHtml = "";
           if (item.stockQuantity !== undefined && item.stockQuantity !== null) {
              stockControlHtml = `
-             <div class="flex items-center justify-between w-full bg-gray-50 p-2 rounded border border-gray-200 text-sm mb-2 mt-2">
-                <span class="text-gray-600 font-bold">Stock: <span class="text-orange-600">${item.stockQuantity}</span></span>
-                <div class="flex gap-1">
-                   <button class="bg-gray-200 hover:bg-gray-300 px-2 rounded decrement-stock-btn" data-id="${item.id}">-1</button>
-                   <button class="bg-gray-200 hover:bg-gray-300 px-2 rounded increment-stock-btn" data-id="${item.id}">+1</button>
-                   <button class="bg-emerald-100 text-emerald-700 hover:bg-emerald-200 px-2 rounded increment-stock-5-btn" data-id="${item.id}">+5</button>
+             <div class="flex flex-col w-full bg-gray-50 p-3 rounded-xl border border-gray-100 text-sm mb-4">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-xs font-bold text-gray-500 uppercase">Stock Lvl</span>
+                  <span class="text-lg font-extrabold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-lg">${item.stockQuantity}</span>
+                </div>
+                <div class="flex gap-2 w-full">
+                   <button class="bg-white border border-gray-200 hover:bg-gray-100 flex-1 py-1 rounded-lg font-bold shadow-sm transition-colors decrement-stock-btn" data-id="${item.id}">-1</button>
+                   <button class="bg-white border border-gray-200 hover:bg-gray-100 flex-1 py-1 rounded-lg font-bold shadow-sm transition-colors increment-stock-btn" data-id="${item.id}">+1</button>
+                   <button class="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-100 w-12 py-1 rounded-lg font-bold shadow-sm transition-colors increment-stock-5-btn" data-id="${item.id}">+5</button>
                 </div>
              </div>
              `;
@@ -3130,19 +3184,21 @@
 
           div.innerHTML += `
           ${stockControlHtml}
-          <div class="flex flex-col col-3 gap-2 space-y-2 w-full mt-auto">
-            <button class="toggle-stock-btn px-3 py-1 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded w-full ${lockClass}" data-id="${item.id}" ${isLocked ? 'disabled' : ''}>
+          <div class="flex flex-col gap-3 w-full mt-auto pt-4 border-t border-gray-100">
+            <button class="toggle-stock-btn py-2.5 bg-gray-900 hover:bg-black text-white text-sm font-bold rounded-xl w-full transition-all shadow-md hover:shadow-lg ${lockClass}" data-id="${item.id}" ${isLocked ? 'disabled' : ''}>
               ${item.stockStatus === "IN_STOCK"
               ? "Mark Out of Stock"
               : "Mark In Stock"
             }
             </button>
-            <button class="edit-product-btn px-3 py-1 bg-orange-500 hover:bg-orange-600 text-white text-sm rounded w-full ${lockClass}" data-id="${item.id}" ${isLocked ? 'disabled' : ''}>
-              Edit
-            </button>
-            <button class="delete-product-btn px-3 py-1 bg-red-600 hover:bg-red-700 text-white text-sm rounded w-full ${lockClass}" data-id="${item.id}" ${isLocked ? 'disabled' : ''}>
-              Delete
-            </button>
+            <div class="flex gap-2 w-full">
+              <button class="edit-product-btn flex-1 py-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white shadow-md hover:shadow-lg text-sm font-bold rounded-xl transition-all ${lockClass}" data-id="${item.id}" ${isLocked ? 'disabled' : ''}>
+                <i class="fas fa-edit mr-1"></i>Edit
+              </button>
+              <button class="delete-product-btn flex-1 py-2 bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 text-sm font-bold rounded-xl transition-colors ${lockClass}" data-id="${item.id}" ${isLocked ? 'disabled' : ''}>
+                <i class="fas fa-trash-alt mr-1"></i>Delete
+              </button>
+            </div>
           </div>
         `;
 
@@ -3223,16 +3279,21 @@
 
         currentPageSubscribers.forEach((s, index) => {
           const div = document.createElement('div');
-          div.className = 'flex items-center justify-between p-3 border-b border-gray-100 hover:bg-gray-50';
+          div.className = 'flex items-center justify-between p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group';
           div.innerHTML = `
-      <div class="flex-1">
-        <p class="font-medium text-gray-800">${s.name || 'No Name'}</p>
-        <p class="text-sm text-gray-500">${s.phone}</p>
+      <div class="flex items-center gap-4">
+        <div class="h-10 w-10 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded-full flex items-center justify-center font-bold shadow-inner">
+          ${(s.name || 'A')[0].toUpperCase()}
+        </div>
+        <div>
+          <p class="font-bold text-gray-900">${s.name || 'Anonymous User'}</p>
+          <p class="text-xs font-semibold text-gray-500">${s.phone}</p>
+        </div>
       </div>
       <div>
-        <button class="delete-subscriber-btn px-3 py-1 bg-red-100 text-red-600 hover:bg-red-200 rounded text-sm" 
+        <button class="delete-subscriber-btn h-8 w-8 flex items-center justify-center bg-red-50 border border-red-100 text-red-500 hover:bg-red-500 hover:text-white rounded-lg transition-colors shadow-sm opacity-50 group-hover:opacity-100" 
                 data-id="${s.id}">
-          <i class="fas fa-trash"></i>
+          <i class="fas fa-trash-alt text-xs"></i>
         </button>
       </div>
     `;
@@ -3266,8 +3327,8 @@
 
         // Previous button
         const prevButton = document.createElement('button');
-        prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-        prevButton.className = 'px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed';
+        prevButton.innerHTML = '<i class="fas fa-chevron-left text-xs"></i>';
+        prevButton.className = 'h-8 w-8 flex items-center justify-center bg-white border border-gray-200 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm transition-colors text-gray-600';
         prevButton.disabled = currentPage === 1;
         prevButton.addEventListener('click', () => {
           if (currentPage > 1) {
@@ -3289,7 +3350,7 @@
         for (let i = startPage; i <= endPage; i++) {
           const pageButton = document.createElement('button');
           pageButton.textContent = i;
-          pageButton.className = `px-3 py-1 border rounded mx-1 ${i === currentPage ? 'bg-orange-600 text-white border-orange-600' : 'hover:bg-gray-100'}`;
+          pageButton.className = `h-8 w-8 flex items-center justify-center text-sm font-bold rounded-lg transition-colors shadow-sm mx-0.5 ${i === currentPage ? 'bg-gradient-to-br from-emerald-500 to-teal-500 text-white border-0' : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-50'}`;
           pageButton.addEventListener('click', () => {
             currentPage = i;
             renderSubscribers();
@@ -3299,8 +3360,8 @@
 
         // Next button
         const nextButton = document.createElement('button');
-        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-        nextButton.className = 'px-3 py-1 border rounded hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed';
+        nextButton.innerHTML = '<i class="fas fa-chevron-right text-xs"></i>';
+        nextButton.className = 'h-8 w-8 flex items-center justify-center bg-white border border-gray-200 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm transition-colors text-gray-600';
         nextButton.disabled = currentPage === totalPages;
         nextButton.addEventListener('click', () => {
           if (currentPage < totalPages) {
@@ -4094,7 +4155,7 @@
         });
         const activeBtn = document.getElementById(`res-filter-${status}`);
         if (activeBtn) {
-          activeBtn.classList.add('bg-orange-600', 'text-white');
+          activeBtn.classList.add('bg-pink-600', 'text-white');
           activeBtn.classList.remove('bg-gray-100', 'text-gray-600');
         }
         renderReservations(status);
@@ -4228,7 +4289,7 @@
         modal.innerHTML = `
           <div class="modal-content" style="max-width:600px; max-height:90vh; overflow-y:auto;">
             <div class="flex justify-between items-center mb-4">
-              <h2 class="text-xl font-bold text-gray-800">Edit Order &mdash; <span class="text-orange-600">${order.orderReference || orderId.slice(-6).toUpperCase()}</span></h2>
+              <h2 class="text-xl font-bold text-gray-800">Edit Order &mdash; <span class="text-green-600">${order.orderReference || orderId.slice(-6).toUpperCase()}</span></h2>
               <span class="close-button text-3xl cursor-pointer text-gray-400 hover:text-red-500 edit-order-close">&times;</span>
             </div>
             <p class="text-sm text-gray-500 mb-4 font-medium">${order.customer?.name || 'Unknown'} &mdash; ${order.customer?.phone || ''}</p>
@@ -4250,7 +4311,7 @@
               <div class="text-sm text-gray-500" id="edit-order-totals-preview"></div>
               <div class="flex gap-2">
                 <button id="cancel-edit-order-btn" class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-sm font-bold">Cancel</button>
-                <button id="save-edit-order-btn" class="px-4 py-2 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold">Save Changes</button>
+                <button id="save-edit-order-btn" class="px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm font-bold">Save Changes</button>
               </div>
             </div>
           </div>
@@ -4318,7 +4379,7 @@
         const subtotal = editingOrderItems.reduce((s, i) => s + (Number(i.price) * i.quantity), 0);
         const tax = subtotal * 0.06;
         const total = subtotal + tax;
-        preview.innerHTML = `Subtotal: <b>$${subtotal.toFixed(2)}</b> | Tax: <b>$${tax.toFixed(2)}</b> | Total: <b class="text-orange-600">$${total.toFixed(2)}</b>`;
+        preview.innerHTML = `Subtotal: <b>$${subtotal.toFixed(2)}</b> | Tax: <b>$${tax.toFixed(2)}</b> | Total: <b class="text-green-600">$${total.toFixed(2)}</b>`;
       }
 
       async function saveEditedOrder() {
@@ -4488,7 +4549,7 @@
     <div class="flex justify-end pt-4">
       <button type="button" 
               id="save-store-hours-btn" 
-              class="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition-colors">
+              class="px-6 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg transition-colors">
         <i class="fas fa-save mr-2"></i>Save Store Hours
       </button>
     </div>
